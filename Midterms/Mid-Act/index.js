@@ -31,12 +31,9 @@ app.get('/file-upload', (req, res) => {
   res.sendFile(__dirname + '/' + 'file-upload.html');
 });
 
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/' + 'index.html');
 });
-
-//get form
 
 app.use(express.urlencoded());
 
