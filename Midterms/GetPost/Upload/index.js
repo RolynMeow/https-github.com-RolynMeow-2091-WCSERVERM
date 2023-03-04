@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-//Uploads
+
 app.use(express.static('public'));
 
 const path = require('path');
@@ -31,12 +31,12 @@ app.get('/file-upload', (req, res) => {
   res.sendFile(__dirname + '/' + 'file-upload.html');
 });
 
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/' + 'index.html');
 });
 
-//get form
+
 
 app.use(express.urlencoded());
 
@@ -55,7 +55,6 @@ app.post('/', function (req, res, next) {
   res.send(JSON.stringify(req.body));
 });
 
-//app listen server
 app.listen(3000, function () {
   console.log('Server is running on port 3000');
 });
