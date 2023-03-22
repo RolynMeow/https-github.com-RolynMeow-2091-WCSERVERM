@@ -4,19 +4,19 @@ const app = express();
 app.use(express.static('public'));
 
 const dish = [{
-  type: 'SISIG'
+  type: 'Sisig'
   province: 'Pampanga'
-  price:02
+  price:220
 },
 {
-  type: 'SISIG'
-  province: 'Pampanga'
-  price:02
+  type: 'Salpicao'
+  province: 'Quezon'
+  price:180
 },
 {
-  type: 'SISIG'
-  province: 'Pampanga'
-  price:02
+  type: 'Bagnet'
+  province: 'Ilocos'
+  price:370
 },
 ];
 
