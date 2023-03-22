@@ -22,24 +22,18 @@ const dishes = [
 },
 ];
 
-app.get('/dishes', (req, res) => {
-res.json(dishes);
+app.get('/api/dishes', (req, res) => {
+res.send(dishes);
 });
 
-app.get('/dishes/:type', (req, res) => {
-  const dishType = req.params.type;
-  const dish = dishes.find(d => d.type === dishType);
-  if (dish) {
-    res.json(dish);
-  } else {
-    res.status(404).send('Record not found');
-  }
-});
+app.get('/api/dishes/:type', (req, res) => {
 
-app.get('*',(req, res) => {
-  res.status(404).send("Invalid route");
+  const dish = dishes.find((h) => h.type === String(req.params.type));
+  if (!dish)
+    return res.start(404).send('Record not found');
+    res.send(dish);
 });
 
 app.listen(port, () => {
-  console.log('Server started on port $ {port}');
-});
+  console.log('Server started on port 3000');
+});Z
